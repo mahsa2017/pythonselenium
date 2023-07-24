@@ -1,9 +1,18 @@
 from seleniumbase import BaseCase
 
 class HomeTest(BaseCase):
-    def test_home_page(self):
-       # open home page
-       self.open("http://practice.automationbro.com/")
+
+   def setUp(self):
+      super().setUp()
+      print("Running before each test")
+
+      # open home page
+      self.open("http://practice.automationbro.com")
+
+   def tearDown(self):
+      print("Running after each test")
+      super().tearDown()
+   def test_home_page(self):
 
        # assert page title
        self.assert_title("Practice E-Commerce Site – Automation Bro")
@@ -28,11 +37,8 @@ class HomeTest(BaseCase):
        print(self.get_text(".zak-footer-bar__1"))
        self.assert_text("Copyright © 2020 Automation Bro", ".zak-footer-bar__1")
 
-    def test_menu_links(self):
+   def test_menu_links(self):
        expectedlinks = [ 'Home','About','Shop','Blog', 'Contact','My account']
-
-       # open url
-       self.open("http://practice.automationbro.com")
 
        #find menu links elements
        menu_links_el = self.find_elements("//ul[@id='primary-menu'] //*[starts-with(@id,'menu-item')]")
