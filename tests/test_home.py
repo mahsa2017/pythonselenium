@@ -6,12 +6,26 @@ class HomeTest(BaseCase):
       super().setUp()
       print("Running before each test")
 
+      #Login commented out to fix it
+      # self.open("https://practice.automationbro.com/my-account")
+      # self.add_text("#username", "testuser")
+      # self.add_text("#password", "PracticeSite123!!")
+      # self.click("button[name=login]")
+      # self.assert_text("Log out", ".woocommerce-MyAccount-content")
+
       # open home page
       self.open("http://practice.automationbro.com")
 
    def tearDown(self):
       print("Running after each test")
+
+      # Logout commented out to fix it
+      # self.open("https://practice.automationbro.com/my-account")
+      # self.click(".woocommerce-MyAccount-content a[href*=logout]")
+      # self.assert_element_visible("button[name=login]")
+
       super().tearDown()
+
    def test_home_page(self):
 
        # assert page title
