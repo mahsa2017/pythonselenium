@@ -15,4 +15,5 @@ class ContactTest(BaseCase):
         self.click("#evf-submit-277")
 
         #verify submit message
-        self.assert_text("We were unable to process your form, please try again.", "div[role=alert]")
+        # self.assert_text("We were unable to process your form, please try again.", "div[role=alert]")
+        self.assert_text("Thanks for contacting us! We will be in touch with you shortly", "div[role=alert]")
