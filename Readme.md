@@ -62,6 +62,14 @@ To see a full list of options, go to the terminal and type:
 ```sh
 sbase options
 ```
+If you need to run your tests in another browser for instance firefox you can provide it as a flag:
+```commandline
+pytest -k <test_file_name> --browser=firefox
+```
+If you need to run tests in parallel for instance you want it to open 3 browser screen to speed up tests run:
+```commandline
+pytest -n=3
+```
 
 ## Integrate with Azure pipelines
 Read [here](https://seleniumbase.io/integrations/azure/azure_pipelines/ReadMe/#give-your-new-project-a-name-and-set-visibility-to-public-for-your-seleniumbase-fork).
