@@ -62,11 +62,11 @@ To see a full list of options, go to the terminal and type:
 ```sh
 sbase options
 ```
-If you need to run your tests in another browser for instance firefox you can provide it as a flag:
+If you need cross browser testing for instance firefox you can provide it as a flag:
 ```commandline
 pytest -k <test_file_name> --browser=firefox
 ```
-If you need to run tests in parallel for instance you want it to open 3 browser screen to speed up tests run:
+If you need parallel testing for instance you need 3 browser instance to speed up tests run:
 ```commandline
 pytest -n=3
 ```
