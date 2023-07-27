@@ -1,6 +1,9 @@
 from py3270 import Emulator
 import sys
 import os
+import logging
+# logger = logging.getLogger()
+# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 
 USER_ENV = 'USER_3270'
 PASSWORD_ENV = 'PASSWORD_3270'
@@ -16,9 +19,9 @@ def username():
 
 
 def connect_to_mainframe(em):
+    # logger.info("testing logger before mainframe")
     em.connect(MAINFRAME_IP)
     em.wait_for_field()
-
     if em.string_found(11, 10, 'TPXA'):
         print("TPXA screen successfully reached")
     else:
