@@ -39,6 +39,7 @@ Folders:
 - **assets**: This folder will contain all the files like images, css files or json files or test data.
 - **custom_Screenshot**: This folder will save any screenshots that you make
 - **latest_logs**: This folder will be generated when a test fails to save any log and screenshots.
+- **recordings**: This folder will be generated when you use the recorder feature to store the test code generated.
 - **tests**:  All the test cases python files will be kept here.
 - **requirements.txt**: This file stores information about all the libraries, modules, and packages which are specific to project.
 
@@ -50,20 +51,23 @@ Test report files:
 To run each individual test, right-click on the test name on pyCharm IDE and select "run <test name>".
 To run a test file, go to the terminal and type:
 ```sh
-pytest tests/<file name> --dashboard --rs --headless --html=report.html
+pytest -k <file name without .py> --dashboard --rs --html=report.html
 ```
-Or if you need to run tests for an specific file which has some print commands in it
-```commandline
-pytest -k ${test_file_name} -s
+or
+```sh
+pytest tests/<file name with .py> --dashboard --rs  --html=report.html
 ```
-
-To see a full list of `pytest` options, go to the terminal and type:
+Some useful options `pytest` include `--headless` (without opening up a browser) and `--demo` (for showcasing the test run).
+To see a full list of options, go to the terminal and type:
 ```sh
 sbase options
 ```
 
 ## Integrate with Azure pipelines
 Read [here](https://seleniumbase.io/integrations/azure/azure_pipelines/ReadMe/#give-your-new-project-a-name-and-set-visibility-to-public-for-your-seleniumbase-fork).
+
+## Record, playback and export code
+Read [here](https://seleniumbase.io/help_docs/recorder_mode/#recorder-mode).
 
 ## Coming Up:
 - Page object model pattern (see [5. Page Object Model with BaseCase](https://seleniumbase.io/help_docs/syntax_formats/#sb_sf_05) and [Page Object Model with the "sb" fixture](https://seleniumbase.io/help_docs/syntax_formats/#sb_sf_06))
